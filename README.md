@@ -8,7 +8,7 @@ For this project I have made use of StyleGAN2-ffhq-config-e which generates faci
 The aim of this project is to distill these capabilities into a pipeline model that is trained on latent variables thhat encompass this attributes.
 The mathematics used is based on a combination of Evgeny Kashins research paper and the linear algebra manipulation I derived that was specific to my desired outputs.
 
-The steps include manipulating and using the SttleGAN2 repository by nvlabs to suit data generation and manipulation.
+The steps include manipulating and using the StyleGAN2 repository by NVlabs to suit data generation and manipulation.
 
 Then extracting the intermediate latent variables( and choosing the right ones) and proceeding to shift characteristics based on certain mathematical equations
 
