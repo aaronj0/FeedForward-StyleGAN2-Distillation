@@ -18,7 +18,7 @@ This pair is trained through a pipeline model that accepts two sets A- the non m
 
 The outputs of this pipeline train weren't perfect even after 12 hours of continuous training after downscaling to 256p. But as the transfer and model improvement were significantly apparent, the training was concluded.
 
-New images fed to this model now outputted a more feminine version of the person. This was tested on the celeb-A dataset by tensorflow
+New images fed to this model now output a more feminine version of the person. This was tested on the celeb-A dataset by tensorflow
 
 Two sub projects I performed were:
 
