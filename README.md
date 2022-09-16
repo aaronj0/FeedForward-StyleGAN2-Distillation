@@ -8,19 +8,67 @@ For this project I have made use of StyleGAN2-ffhq-config-e which generates faci
 The aim of this project is to distill these capabilities into a pipeline model that is trained on latent variables thhat encompass this attributes.
 The mathematics used is based on a combination of Evgeny Kashins research paper and the linear algebra manipulation I derived that was specific to my desired outputs.
 
-The steps include manipulating and using the StyleGAN2 repository by NVlabs to suit data generation and manipulation.
+The steps include:
+- Manipulating and using the StyleGAN2 repository by NVlabs to suit data generation and manipulation.
 
-Then extracting the intermediate latent variables( and choosing the right ones) and proceeding to shift characteristics based on certain mathematical equations
+||| 
+|:----:|:----:|
+|![ ](data/new/old-young.jpeg)|![](data/new/gen.jpeg)| 
+
+- Extracting the intermediate latent variables( and choosing the right ones) and proceeding to shift characteristics based on certain mathematical equations
+
+![](data/new/algo.jpeg)
 
 This would lead to a pair dataset generation that visually encompasses the shift in its latent code.
+
+![](data/new/male-female.jpeg)
 
 This pair is trained through a pipeline model that accepts two sets A- the non modified visual data and B- the modified equivalents and trains the pipeline to perform a similar manipulation.
 
 The outputs of this pipeline train weren't perfect even after 12 hours of continuous training after downscaling to 256p. But as the transfer and model improvement were significantly apparent, the training was concluded.
 
+### Generated image progression over 200 epochs
+
+![](data/synth_img.gif)
+
+The training is deemed succesful as the quality of the generated image as well as the generated features improved significantly over the 200 epochs.
+|EPOCH 7|EPOCH 50|EPOCH 150|EPOCH 200|
+|:----:|:----:|:----:|:----:|
+|![alt text](data/epoch7_synth.jpeg)|![alt text](data/epoch50.jpg)| ![alt text](data/epoch150.jpg)| ![alt text](data/epoch176_synth.jpeg)|
+
 New images fed to this model now output a more feminine version of the person. This was tested on the celeb-A dataset by tensorflow
 
-Two sub projects I performed were:
+### Celeb-A Dataset Results
 
-- Image morphing( Smooth shift from one face to another and viewing the intermediate people between them)
-- Expression transfer( Variation of smiling and frowning although it could be improved with a purer latent distillation and inclusion of features like eye concavity, nose flare and brow arch)
+![](data/celeba_results.gif)
+
+### Pair-to-Pair translation results:
+
+| | | | | | |
+|:----:|:----:|:----:|:----:|:----:|:----:|
+|![ ](data/celeba1-a.jpg)|![](data/celeba1-b.jpg)|![ ](data/celeba2-a.jpg)|![](data/celeba2-b.jpg)|![ ](data/celeba3-a.jpg)|![](data/celeba3-b.jpg)|
+
+
+
+## Face Morphing
+
+Performs a shift from one face to another based on the following interpolation equation in terms of the latent mapping representation:
+
+### Results:
+
+||| 
+|:----:|:----:|
+|![ ](data/morph1.gif)|![](data/morph2.gif)| 
+
+
+## Expression Transfer
+
+Performs variation of smiling and frowning although it could be improved with a purer latent distillation and inclusion of features like eye concavity, nose flare and brow arch.
+
+### Results:
+
+||| 
+|:----:|:----:|
+|![ ](data/expr1.gif)|![](data/exxpr2.gif)|
+
+
