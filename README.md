@@ -14,15 +14,15 @@ The steps include:
 |:----:|:----:|
 |![ ](data/new/old-young.jpeg)|![](data/new/gen.jpeg)| 
 
-- Extracting the intermediate latent variables( and choosing the right ones) and proceeding to shift characteristics based on certain mathematical equations
+- Extracting the intermediate latent variables( and choosing the right ones) and proceeding to shift characteristics based on the following algorithm:
 
 ![](data/new/algo.jpeg)
 
-This would lead to a pair dataset generation that visually encompasses the shift in its latent code.
+This leads to pairwise dataset generation that visually encompasses the shift in its latent code.
 
 ![](data/new/male-female.jpeg)
 
-This pair is trained through a pipeline model that accepts two sets A- the non modified visual data and B- the modified equivalents and trains the pipeline to perform a similar manipulation.
+This pair is trained through a pix2pixhd model that accepts two sets A- the non modified visual data and B- the modified equivalents and trains the pipeline to perform a similar manipulation.
 
 The outputs of this pipeline train weren't perfect even after 12 hours of continuous training after downscaling to 256p. But as the transfer and model improvement were significantly apparent, the training was concluded.
 
